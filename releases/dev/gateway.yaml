@@ -46,8 +46,20 @@ spec:
         internal: 8443
         external: 443
     gateway:
-      env:
-        ENV.PASSWORD.password: "ekta's password"
+        license:
+          accept: "true"
+        env:
+          ENV.PROPERTY.gateway.template: "New Testing environment"
+          ENV.CONTEXT_VARIABLE_PROPERTY.env-configuration.example: "This is New Testing environment"
+          ENV.PASSWORD.password: "less secret test password"
+          ENV.LISTEN_PORT.custom-https: '{
+            "protocol" : "HTTP",
+            "port" : 12345,
+            "enabledFeatures" : [ "Published service message input" ],
+            "properties" : {
+              "threadPoolSize" : "20"
+            }
+          }'
 
 
 
