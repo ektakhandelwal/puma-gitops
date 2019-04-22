@@ -2,9 +2,15 @@ apiVersion: v1
 data:
   env.yaml: |-
     gateway:
+      license:
+        accept: "true"
       env:
-        ENV.PROPERTY.gateway.template: "From env file"
-        ENV.CONTEXT_VARIABLE_PROPERTY.env-configuration.example: "From env file"
+        ENV.PROPERTY.gateway.template: "New 1 Testing environment"
+        ENV.CONTEXT_VARIABLE_PROPERTY.env-configuration.example: "This is 1 Testing environment"
+        ENV.PASSWORD.password: "less secret test password"
+        ENV.LISTEN_PORT.custom-https: '{ "protocol" : "HTTP", "port" : 12345, "enabledFeatures"
+          : [ "Published service message input" ], "properties" : { "threadPoolSize"
+          : "20" } }'
 kind: ConfigMap
 metadata:
   creationTimestamp: null

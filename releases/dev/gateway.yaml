@@ -21,11 +21,14 @@ spec:
   - secretKeyRef:
       name: gateway-license
       key: license.yaml
+  - configMapKeyRef:
+      name: env-values
+      key: env.yaml
   values:
     replicaCount: 1
     container:
       image: docker.sandbox5.apimgcp.com/repository/docker-hosted/gateway
-      tag: '8'
+      tag: '4'
     imageCredentials:
       name: "docker.sandbox5.apimgcp.com"
       registry: "docker.sandbox5.apimgcp.com"
@@ -42,17 +45,6 @@ spec:
       - name: https
         internal: 8443
         external: 443
-    gateway:
-      license:
-        accept: "true"
-      env:
-        ENV.PROPERTY.gateway.template: "New Testing environment"
-        ENV.CONTEXT_VARIABLE_PROPERTY.env-configuration.example: "This is Not New Testing\
-          \ environment"
-        ENV.PASSWORD.password: "less secret test password"
-        ENV.LISTEN_PORT.custom-https: '{ "protocol" : "HTTP", "port" : 12345, "enabledFeatures"
-          : [ "Published service message input" ], "properties" : { "threadPoolSize"
-          : "20" } }'
 
 
 
