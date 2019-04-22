@@ -45,6 +45,9 @@ spec:
       - name: https
         internal: 8443
         external: 443
+    gateway:
+      env:
+        ENV.SECURE_PASSWORD: "ekta's password"
 
 
 
