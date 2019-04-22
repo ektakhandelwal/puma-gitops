@@ -21,9 +21,6 @@ spec:
   - secretKeyRef:
       name: gateway-license
       key: license.yaml
-  - configMapKeyRef:
-      name: env-values
-      key: env.yaml
   values:
     replicaCount: 1
     container:
