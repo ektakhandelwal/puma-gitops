@@ -47,7 +47,7 @@ spec:
         external: 443
     gateway:
       env:
-        ENV.SECURE_PASSWORD: "ekta's password"
+        ENV.PASSWORD.password: "ekta's password"
 
 
 
